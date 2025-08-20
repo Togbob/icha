@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funfact icha</title>
+    <link rel="stylesheet" href="icha2.css" type="text/css" media="all">
+</head>
+<body>
+    <div class="title-box">
+        <h1 style="margin: 0;">Top 3 Lagu Favorite MichAaa</h1>
+    </div>
+    <!-- Foto berjejer di belakang kotak lagu -->
+    <div class="photo-row">
+        <div class="photo-row-track">
+            <!-- Foto-foto asli -->
+            <img src="images/IMG_20250813_181557.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181526.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181510.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181543.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181928.jpg" alt="foto kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181914.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181900.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181840.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181821.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181803.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181621.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181646.jpg" alt="Foto Kamu" class="photo-row-img">
+            <!-- Foto-foto duplikat untuk looping -->
+            <img src="images/IMG_20250813_181557.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181526.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181510.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181543.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181928.jpg" alt="foto kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181914.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181900.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181840.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181821.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181803.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181621.jpg" alt="Foto Kamu" class="photo-row-img">
+            <img src="images/IMG_20250813_181646.jpg" alt="Foto Kamu" class="photo-row-img">
+        </div>
+    </div>
+    <!-- Boxes for favorite songs -->
+    <div class="box-container">
+        <div class="box" style="position: relative;">
+            <div class="comment-lagu-note">hmmmmm</div>
+            <div class="box-title">Backburner</div>
+            <img src="images/Backburner.jpeg" alt="Foto Kotak 1" class="box-img">
+            <audio class="audio-player" controls>
+                <source src="Backburner.mp3" type="audio/mpeg">
+                Browser tidak mendukung audio.
+            </audio>
+        </div>
+        <div class="box">
+            <div class="box-title">Autumn</div>
+            <img src="images/Backburner.jpeg" alt="Foto Kotak 2" class="box-img">
+            <audio class="audio-player" controls>
+                <source src="NIKI - Autumn (Official Lyric Video).mp3" type="audio/mpeg">
+                Browser tidak mendukung audio.
+            </audio>
+        </div>
+        <div class="box">
+            <div class="box-title">Red</div>
+            <img src="images/red taylor.jpeg" alt="Foto Kotak 3" class="box-img">
+            <audio class="audio-player" controls>
+                <source src="Taylor Swift – Red (Audio).mp3" type="audio/mpeg">
+                Browser tidak mendukung audio.
+            </audio>
+        </div>
+    </div>
+    <!-- Tambahkan di bawah .box-container -->
+    <div class="favorite-food-box">
+        <h1 style="margin: 0;">Makanan Kesukaan Ichaa :3</h1>
+    </div>
+    <div class="box-container">
+        <div class="box" style="position: relative;">
+            <div class="nasi-note">baru sadar engak ada nasi jir 😅</div>
+            <div class="box-title">Bakso Cup</div>
+            <img src="images/bakso ayam.jpeg" alt="Foto Kotak 1" class="box-img">
+        </div>
+        <div class="box">
+            <div class="box-title">Gacoan</div>
+            <img src="images/Mie Gacoan.jpeg" alt="Foto Kotak 2" class="box-img">
+        </div>
+        <div class="box">
+            <div class="box-title">Miegren</div>
+            <img src="images/miegren.jpeg" alt="Foto Kotak 3" class="box-img">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="title-box">
+        <div style="position: relative; display: inline-block;">
+            <div class="malas-text">sbnrnya mls tambahin sih :v</div>
+            <h1 style="margin: 0;">Dan lain Sebagainya</h1>
+        </div>
+    </div>
+    <!-- button halaman 3-->
+    <div class="button-container" style="position: relative;">
+        <button onclick="window.location.href='icha3.html'" class="bottom-button">Selanjutnya</button>
+    </div>
+
+</body>
+<script>
+    // Pastikan hanya satu audio yang bisa diputar dalam satu waktu
+    document.querySelectorAll('.audio-player').forEach(audio => {
+        audio.addEventListener('play', function() {
+            document.querySelectorAll('.audio-player').forEach(a => {
+                if (a !== audio) {
+                    a.pause();
+                    a.currentTime = 0;
+                }
+            });
+        });
+    });
+</script>
+</html>

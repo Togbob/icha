@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word</title>
+    <link rel="stylesheet" href="icha3.css" type="text/css" media="all">
+</head>
+<body>
+    <div class="container">
+        <div class="box-1">
+            <h1>Selamat ulang tahun, Icha 🎉</h1>
+        <p>meskipun kita sudah tidak seperti dulu lagi.., aku tetap mendoakan yang terbaik untuk kamu 😊. 
+            Semoga di usia yang baru ini kamu selalu bahagia, dimudahkan segala urusanmu, 
+            dan dikelilingi orang-orang yang tulus dan sayang sama kamu. Terima kasih atas kenangan yang pernah kita bagi. 
+            Semoga hidupmu ke depan semakin indah 🤍</p>
+        </div>
+        <div class="box-2">
+            <img src="images/foto lagu.jpeg" alt="foto lagu" class="box-img">
+            <h2 >Someone You Loved</h2>
+            <audio src="c:\Users\naufp\Downloads\Lewis_Capaldi_-_Some_You_Loved_CeeNaija.com_.mp3" type="audio/mpeg" control autoplay class="audio-player">
+                Browser tidak mendukung audio.
+            </audio>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.body;
+        const particleCount = 30; // Adjusted to reasonable amount
+        
+        // Create particles in the bottom quarter of the screen
+        for (let i = 0; i < particleCount; i++) {
+            createParticle();
+        }
+        
+        // Adjust spacing periodically to prevent cutoff
+        setInterval(adjustParticleDistribution, 5000);
+        
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.innerHTML = '♥';
+            particle.className = 'particle';
+            
+            // Position in bottom quarter of screen
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight - (Math.random() * window.innerHeight * 0.25);
+            
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            
+            // Randomize animation
+            const duration = 10 + Math.random() * 10;
+            const delay = Math.random() * 10;
+            
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = delay + 's';
+            
+            container.appendChild(particle);
+        }
+        
+        function adjustParticleDistribution() {
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                const currentX = parseFloat(particle.style.left);
+                const currentY = parseFloat(particle.style.top);
+                
+                // Reposition if too close to edge
+                if (currentX < 20 || currentX > window.innerWidth - 20) {
+                    particle.style.left = Math.random() * window.innerWidth + 'px';
+                }
+                
+                if (currentY < window.innerHeight * 0.75) {
+                    particle.style.top = (window.innerHeight - (Math.random() * window.innerHeight * 0.25)) + 'px';
+                }
+            });
+        }
+    });
+
+        const audio = document.querySelector('.audio-player');
+        if (audio) {
+            audio.play().catch(() => {
+                document.body.addEventListener('click', function(){
+                    audio.play();
+                }, {once: true});
+            });
+        }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(particle => {
+            const currentY = parseFloat(particle.style.top);
+            if (currentY < window.innerHeight * 0.75) {
+                particle.style.top = (window.innerHeight - (Math.random() * window.innerHeight * 0.25)) + 'px';
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,97 @@
+    body {
+        background-color: #002366;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        position: relative;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        display: flex;
+    }
+    
+    .container {
+        display: flex;
+        width: 100%;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }       
+
+    .box-1 {
+        background: white;
+        color: #002366;
+        margin: 35px;
+        padding: 40px 30px;
+        border-radius: 20px;
+        width: 65%;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .box-2 {
+        background: white;
+        color: #002366;
+        margin: 35px;
+        padding: 40px 30px;
+        border-radius: 20px;
+        width: 15%;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+        display: flex; /* Use flexbox for centering */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+
+    }
+
+    .box-img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+
+    .audio-player {
+        width: 140px;
+        outline: none
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .particle {
+        position: absolute;
+        color: #ff3366;
+        font-size: 16px;
+        pointer-events: none;
+        user-select: none;
+        animation: float 15s linear infinite;
+        opacity: 0.8;
+        text-shadow: 0 0 5px rgba(255, 51, 102, 0.5);
+        z-index: 1;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(-75vh) rotate(360deg);
+            opacity: 0;
+        }
+    }

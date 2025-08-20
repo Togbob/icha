@@ -1,0 +1,192 @@
+    body {
+        background-color: #002366;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        position: relative; /* Tambahkan ini */
+        overflow-x: hidden;  /* Tambahkan ini */
+        display: flex; /* Use flexbox for the body */
+        flex-direction: column; /* Stack children vertically */
+        min-height: 100vh; /* Ensure the body takes at least full height */
+    }
+    .title-box {
+        background: white;
+        color: #002366;
+        padding: 18px 32px;
+        border-radius: 16px;
+        font-size: 1.7em;
+        font-weight: bold;
+        margin: 0 auto 18px auto;
+        width: fit-content;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .box-container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        margin-top: 40px;
+        flex-wrap: wrap; /* Allow wrapping of boxes */
+    }
+    .box {
+        background: white;
+        color: #002366;
+        padding: 32px 20px 24px 20px;
+        width: 180px;
+        border-radius: 16px;
+        font-size: 1.2em;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-title {
+        margin-bottom: 18px;
+        font-size: 1.3em;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    ;.audio-player {
+        width: 140px;
+        outline: none;
+        margin: 0 auto;
+        display: block;
+    }
+    .box-img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .photo-row {
+        position: fixed;
+        top: 250px;
+        left: 0;
+        width: 100vw;
+        height: 180px;
+        overflow: hidden; 
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        transform: translate(0%);
+    }
+    .photo-row-track {
+        display: flex;
+        gap: 24px;
+        width: calc((150px + 24px) * 24); /* 24 = jumlah foto (asli + duplikat) */
+        animation: movePhotoRow 37s linear infinite;
+    }
+    .photo-row-img {
+        height: 150px;
+        opacity: 0.35;
+        border-radius: 18px;
+        flex-shrink: 0;
+    }
+    @keyframes movePhotoRow {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * ((150px + 24px) * 12)));
+            /* 12 = jumlah foto asli */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .box-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            width: 90vw;
+        }
+        .audio-player {
+            width: 80vw;
+        }    
+        .photo-row-img {
+            min-width: 80px;
+            height: 80px;
+        }
+    }
+    
+    .favorite-food-box {
+        background: white; 
+        color: #002366; 
+        margin: 40px auto 0 auto;
+        padding: 20px 32px;
+        border-radius: 16px;
+        font-size: 1.3em;
+        font-weight: bold;
+        width: fit-content;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 2;
+        position: relative;
+    }
+    .nasi-note {
+        position: absolute;
+        top: 160px; /* geser ke atas bawah */
+        left: -70%; /* geser ke kanan kiri */
+        transform: rotate(7deg) translateX(-50%);
+        background: #ffcc00;
+        color: #002366;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 2;
+    }
+    .comment-lagu-note {
+        position: absolute;
+        top: 300px; /* geser ke atas bawah*/
+        left: 370%;  /* geser ke kanan kiri*/
+        transform: rotate(-350deg) translateX(-50%);
+        background: #ffcc00;
+        color: #002366;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 2;
+    }
+    .malas-text {
+        position: absolute;
+        top: 160px; /* geser ke atas bawah */
+        left: -60%; /* geser ke kanan kiri */
+        transform: rotate(-9deg) translateX(170%) scale(0.7);
+        background: #ffcc00;
+        color: #002366;
+        padding: 2px 5px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    .button-container {
+        margin-top: auto; /* Add some space above the button */
+        text-align: center;
+        top: 20px; /* Adjust as needed */
+        left: 20px; /* Adjust as needed */
+    }
+    .bottom-button {
+        background-color: #ffcc00; /* warna Button */
+        color: #002366; /* warna Text */
+        padding: 10px 20px; /* Button padding */
+        border: none; /* Remove border */
+        border-radius: 8px; /* Rounded corners */
+        font-size: 1.2em; /* Font size */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Transition effect */  
+    }
+    .bottom-button:hover {
+        background-color: #e6b800; /* Darker shade on hover */
+    }
