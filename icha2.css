@@ -171,11 +171,68 @@
         z-index: 2;
     }
 
+.miegren-box {
+    position: relative; /* supaya absolute child nempel di box */
+}
+
+.miegren-note {
+    position: relative;
+    background: #ffcc00;
+    color: #002366;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+     .miegren-note.note1{
+        position: relative;
+    }
+
+    .miegren-note.note1 {
+        position: absolute;
+        top: -10px;
+        left: 185px;
+        transform: rotate(10deg);
+         background: #ffcc00;
+        color: #002366;
+        padding: 2px 5px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;  
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    .miegren-note.note2 {
+        position: relative;
+    }
+
+    .miegren-note.note2 {
+        position: absolute;
+        top: 10px;
+        left: 130px;
+        transform: rotate(10deg);
+         background: #ffcc00;
+        color: #002366;
+        padding: 2px 5px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 2;
+    } 
+
     .button-container {
-        margin-top: auto; /* Add some space above the button */
+        position: fixed;/* margin-top: auto; */
+        bottom: 0px;
+        right: 20px;
         text-align: center;
-        top: 20px; /* Adjust as needed */
-        left: 20px; /* Adjust as needed */
+        z-index: 1000; /* Ensure it appears above other content */
+        /* top: 20px; */
+        /* left: 20px; */
     }
     .bottom-button {
         background-color: #ffcc00; /* warna Button */
