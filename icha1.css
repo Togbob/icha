@@ -11,6 +11,48 @@
     p {
         font-size: 1.5em;
     }
+    .photo-row {
+        position: fixed;
+        top: 250px;
+        left: 0;
+        width: 100vw;
+        height: 180px;
+        overflow: hidden; 
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        transform: translate(0%);
+    }
+    .photo-row-track {
+        display: flex;
+        gap: 24px;
+        width: calc((150px + 24px) * 24); /* 24 = jumlah foto (asli + duplikat) */
+        animation: movePhotoRow 37s linear infinite;
+    }
+    .photo-row-img {
+        height: 150px;
+        opacity: 0.35;
+        border-radius: 18px;
+        flex-shrink: 0;
+    }
+    @keyframes movePhotoRow {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * ((150px + 24px) * 12)));
+            /* 12 = jumlah foto asli */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .photo-row-img {
+            min-width: 80px;
+            height: 80px;
+        }
+    }
+
     .center-box {
         background: white;
         color: #002366;
@@ -19,7 +61,43 @@
         border-radius: 20px;
         max-width: 400px;
         box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        position: relative;
+        z-index: 2;
     }
+    
+    .perhatian1 {
+        position: absolute;
+        display: inline-block;
+        top: 5px; /* geser ke atas bawah*/
+        left: 33%;  /* geser ke kanan kiri*/
+        transform: rotate(-15deg) translateX(50%) scale(1.5);
+        background: #000000;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 3;
+        animation: pulsebox 1.5s infinite ease-in-out;
+    }
+    .perhatian2 {
+        position: absolute;
+        display: inline-block;
+        top: 70px; /* geser ke atas bawah*/
+        left: 6%;  /* geser ke kanan kiri*/
+        transform: rotate(-15deg) translateX(50%) scale(1);
+        background: #000000;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 3;
+        animation: pulsebox 1.5s infinite ease-in-out;
+    }
+
     .btn-ultah {
         margin-top: 25px;
         padding: 12px 32px;
