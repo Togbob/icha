@@ -130,8 +130,8 @@
     }
     .nasi-note {
         position: absolute;
-        top: 160px; /* geser ke atas bawah */
-        left: -70%; /* geser ke kanan kiri */
+        top: 300px; /* geser ke atas bawah */
+        left: 10%; /* geser ke kanan kiri */
         transform: rotate(7deg) translateX(-50%);
         background: #ffcc00;
         color: #002366;
@@ -247,3 +247,4 @@
     .bottom-button:hover {
         background-color: #e6b800; /* Darker shade on hover */
     }
+
