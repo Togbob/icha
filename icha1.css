@@ -97,6 +97,22 @@
         z-index: 3;
         animation: pulsebox 1.5s infinite ease-in-out;
     }
+    .perhatian3 {
+        position: absolute;
+        display: inline-block;
+        top: 87px; /* geser ke atas bawah*/
+        left: 11%;  /* geser ke kanan kiri*/
+        transform: rotate(-15deg) translateX(50%) scale(1);
+        background: #000000;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 3;
+        animation: pulsebox 1.5s infinite ease-in-out;
+    }
 
     .btn-ultah {
         margin-top: 25px;
