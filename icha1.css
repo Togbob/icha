@@ -3,17 +3,17 @@
         color: white;
         font-family: Arial, sans-serif;
         text-align: center;
-        padding: 50px;
+        padding: 20px; /*awalnya 50px*/
     }
     h1 {
-        font-size: 3em;
+        font-size: 2.2em; /*awalnya 3em*/
     }
     p {
-        font-size: 1.5em;
+        font-size: 1.2em; /*awalnya 1.5em*/
     }
     .photo-row {
-        position: fixed;
-        top: 250px;
+        position: relative; /*awalnya fixed*/
+        top: 20px 0; /*awalnya 250px*/
         left: 0;
         width: 100vw;
         height: 180px;
@@ -26,12 +26,12 @@
     }
     .photo-row-track {
         display: flex;
-        gap: 24px;
+        gap: 16px; /*awalnya 24px*/
         width: calc((150px + 24px) * 24); /* 24 = jumlah foto (asli + duplikat) */
         animation: movePhotoRow 37s linear infinite;
     }
     .photo-row-img {
-        height: 150px;
+        height: 250px; /*awalnya 150px*/
         opacity: 0.35;
         border-radius: 18px;
         flex-shrink: 0;
@@ -41,25 +41,31 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-1 * ((150px + 24px) * 12)));
+            transform: translateX(calc(-1 * ((-50% + 24px) * 12))); /*awalnya 150px*/
             /* 12 = jumlah foto asli */
         }
     }
 
     @media (max-width: 600px) {
         .photo-row-img {
-            min-width: 80px;
-            height: 80px;
+            min-width: 70px; /*awalnya 80px*/
+            height: 70px; /*awalnya 80px*/
+        }
+            /*yang dari chatgpt*/
+            .perhatian1, .perhatian2 {
+        font-size: 0.8em;
+        transform: rotate(-10deg) translateX(20%) scale(1);
+        left: 10%; 
         }
     }
 
     .center-box {
         background: white;
         color: #002366;
-        margin: 0 auto;
+        margin: 20 auto; /*awalnya 0 auto*/
         padding: 40px 30px;
         border-radius: 20px;
-        max-width: 400px;
+        max-width: 90%; /*awalnya 400px*/
         box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         position: relative;
         z-index: 2;
