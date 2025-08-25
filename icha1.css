@@ -1,127 +1,114 @@
-body {
-    background-color: #002366;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px; /* 🔹 dikurangi biar muat di HP */
-}
-
-/* Judul */
-h1 {
-    font-size: 2.2em; /* 🔹 lebih kecil dari 3em */
-}
-p {
-    font-size: 1.2em;
-}
-
-/* Baris foto */
-.photo-row {
-    position: relative; /* 🔹 dari fixed jadi relative */
-    margin: 20px auto;  /* 🔹 kasih jarak */
-    width: 100%;
-    overflow: hidden; 
-    z-index: 0;
-}
-
-.photo-row-track {
-    display: flex;
-    gap: 16px; /* 🔹 gap lebih kecil */
-    animation: movePhotoRow 30s linear infinite;
-}
-
-.photo-row-img {
-    height: 120px; /* 🔹 default lebih kecil */
-    opacity: 0.35;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
-
-/* Animasi */
-@keyframes movePhotoRow {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* 🔹 cukup setengah jalan */
-}
-
-/* Kotak tengah */
-.center-box {
-    background: white;
-    color: #002366;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 16px;
-    max-width: 400px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    position: relative;
-    z-index: 2;
-}
-
-/* Teks perhatian */
-.perhatian1 {
-    position: absolute;
-    top: 5px;
-    left: 50%;  /* 🔹 lebih fleksibel */
-    transform: translateX(-50%) rotate(-8deg) scale(1.2);
-    background: #000;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 1em;
-    font-weight: bold;
-    white-space: nowrap;
-    z-index: 3;
-    animation: pulsebox 1.5s infinite ease-in-out;
-}
-.perhatian2 {
-    position: absolute;
-    top: 60px;
-    left: 50%; /* 🔹 center juga */
-    transform: translateX(-50%) rotate(-5deg);
-    background: #000;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.9em;
-    font-weight: bold;
-    white-space: nowrap;
-    z-index: 3;
-    animation: pulsebox 1.5s infinite ease-in-out;
-}
-
-/* Animasi perhatian */
-@keyframes pulsebox {
-    0%, 100% { transform: scale(1) rotate(-8deg); }
-    50% { transform: scale(1.1) rotate(-8deg); }
-}
-
-/* Tombol */
-.btn-ultah {
-    margin-top: 25px;
-    padding: 12px 32px;
-    font-size: 1.2em;
-    background: #002366;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.btn-ultah:hover {
-    background: #0055cc;
-}
-
-/* 🔹 Responsif di HP */
-@media (max-width: 600px) {
-    h1 { font-size: 1.8em; }
-    p { font-size: 1em; }
-
+      body {
+        background-color: #002366;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px; 
+    }
+    h1 {
+        font-size: 3em; 
+    }
+    p {
+        font-size: 1.5em; 
+    }
+    .photo-row {
+        position: fixed;
+        top: 250px ;
+        left: 0;
+        width: 100vw;
+        height: 180px;
+        overflow: hidden; 
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        transform: translate(0%);
+    }
+    .photo-row-track {
+        display: flex;
+        gap: 24px;
+        width: calc((150px + 24px) * 24); /* 24 = jumlah foto (asli + duplikat) */
+        animation: movePhotoRow 37s linear infinite;
+    }
     .photo-row-img {
-        height: 70px;
+        height: 150px;
+        opacity: 0.35;
+        border-radius: 18px;
+        flex-shrink: 0;
     }
+    @keyframes movePhotoRow {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * ((150px + 24px) * 12))); 
+            /* 12 = jumlah foto asli */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .photo-row-img {
+            min-width: 80px; 
+            height: 80px; 
+        }
+    }
+
     .center-box {
-        max-width: 90%; /* 🔹 biar muat di layar kecil */
-        padding: 15px;
+        background: white;
+        color: #002366;
+        margin: 0 auto; 
+        padding: 40px 30px;
+        border-radius: 20px;
+        max-width: 400px; 
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        position: relative;
+        z-index: 2;
     }
-    .perhatian1, .perhatian2 {
-        font-size: 0.8em;
+    
+    .perhatian1 {
+        position: absolute;
+        display: inline-block;
+        top: 5px; /* geser ke atas bawah*/
+        left: 33%;  /* geser ke kanan kiri*/
+        transform: rotate(-15deg) translateX(50%) scale(1.5);
+        background: #000000;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 3;
+        animation: pulsebox 1.5s infinite ease-in-out;
     }
-}
+    .perhatian2 {
+        position: absolute;
+        display: inline-block;
+        top: 70px; /* geser ke atas bawah*/
+        left: 6%;  /* geser ke kanan kiri*/
+        transform: rotate(-15deg) translateX(50%) scale(1);
+        background: #000000;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 1em;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 3;
+        animation: pulsebox 1.5s infinite ease-in-out;
+    }
+
+    .btn-ultah {
+        margin-top: 25px;
+        padding: 12px 32px;
+        font-size: 1.2em;
+        background: #002366;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .btn-ultah:hover {
+        background: #0055cc;
+    }
